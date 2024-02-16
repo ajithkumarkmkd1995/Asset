@@ -28,7 +28,7 @@ class AssetsModel(models.Model):
   """ Model for Assets detials table  """
   name  = models.CharField(max_length=50)
   manufacturer  = models.CharField(max_length=100)
-  purchased_date = models.DateField(default=timezone.now)
+  purchased_date = models.DateTimeField(default=timezone.now)
   condition = models.TextField()
   issued = models.BooleanField(default=False)
   

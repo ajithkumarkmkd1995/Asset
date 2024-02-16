@@ -28,8 +28,6 @@ class EmployeeApiTest(TestCase):
   
   def setUp(self):
     self.client = APIClient()
-    self.company = CompanyModel.objects.create(name='Test Company', address='Test Address')
-    self.employee_data = {'name': 'Test Employee', 'department': 'Test Department', 'company': self.company.id}
   
   def test_list_employees(self):
     """ Test list companies successfully"""

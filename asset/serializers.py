@@ -16,3 +16,10 @@ class EmployeeSerializer(serializers.ModelSerializer):
     model = EmployeeModel
     fields = ('id', 'name', 'department', 'company')
     read_only_fields = ('id',)
+
+class AssetSerializer(serializers.ModelSerializer):
+  """ Serializer for asset object """
+  class Meta :
+    model = AssetsModel
+    fields = ('id', 'name', 'manufacturer', 'purchased_date', 'condition', 'issued')
+    read_only_fields = ('id', 'purchased_date', 'issued')

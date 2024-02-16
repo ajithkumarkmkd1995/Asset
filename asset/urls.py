@@ -1,18 +1,18 @@
 from django.urls import path, include
 
+from rest_framework.routers import DefaultRouter
+
 from asset.views import *
 
 app_name = 'asset'
 
+router = DefaultRouter()
+router.register('companies', CompanyAPIViewSet, basename='company')
+router.register('employees', EmployeeAPIViewSet, basename='employee')
+router.register('assets', AssetsAPIViewSet, basename='asset')
+
 urlpatterns = [
-    # url to get and post company instence 
-    path('companies/', CompanyListCreateAPIView.as_view(), name='company-list'),
-    # url to retrieve, update, delete each company instence 
-    path('company/<int:pk>/', CompanyRetrieveUpdateDestroyAPIView.as_view(), name='company-detail'),
-    # url to get and post employee instence 
-    path('employees/', EmployeeListCreateAPIView.as_view(), name='employee-list'),
-    # url to retrieve, update, delete each employee instence 
-    path('employee/<int:pk>/', EmployeeRetrieveUpdateDestroyAPIView.as_view(), name='employee-detail'),
+    path('', include(router.urls)),
 ]
 
 # urlpatterns = [
