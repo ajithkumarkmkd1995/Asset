@@ -18,7 +18,7 @@ class EmployeeModel(models.Model):
   """ Model for employee table """
   name = models.CharField(max_length=100)
   department = models.CharField(max_length=100)
-  company = models.ForeignKey(CompanyModel, on_delete=models.CASCADE, related_name= 'employe', )
+  company = models.ForeignKey(CompanyModel, on_delete=models.CASCADE, related_name= 'employe',)
   
   def __str__(self):
       return self.name

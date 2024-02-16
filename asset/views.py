@@ -15,3 +15,14 @@ class CompanyRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView)
   queryset = CompanyModel.objects.all()
   serializer_class = serializers.CompanySerializer
 
+
+class EmployeeListCreateAPIView(generics.ListCreateAPIView):
+  """ API view for listing and creating employees """
+  queryset = EmployeeModel.objects.all()
+  serializer_class = serializers.EmployeeSerializer
+
+class EmployeeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+  """ API view for retrieving, updating, and deleting a emoloyee """
+  queryset = EmployeeModel.objects.all()
+  serializer_class = serializers.EmployeeSerializer
+
