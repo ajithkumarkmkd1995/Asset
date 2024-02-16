@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     
     # internal apps 
     'rest_framework',
+    # 'drf_yasg',
     # custom apps
     'asset',
 ]
