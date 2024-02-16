@@ -87,7 +87,7 @@ class assetApiTest(TestCase):
     self.assertEqual(asset.manufacturer , sample_asset().manufacturer)
   
   
-  def test_delete_employee(self):
+  def test_delete_asset(self):
     """ Test deleting a asset  """
     asset = sample_asset()
     

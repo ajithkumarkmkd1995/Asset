@@ -81,3 +81,13 @@ class CompanyApiTest(TestCase):
     self.assertEqual(res.status_code, status.HTTP_200_OK)
     self.assertEqual(company.name , payload['name'])
     self.assertEqual(company.address , sample_company().address)
+  
+  def test_delete_company_object(self):
+    """ Test deleting a company  """
+    asset = sample_company()
+    
+    url = detail_url(asset.id)
+    res = self.client.delete(url)
+    
+    self.assertEqual(res.status_code, status.HTTP_204_NO_CONTENT)
+    self.assertEqual(CompanyModel.objects.count(), 0)

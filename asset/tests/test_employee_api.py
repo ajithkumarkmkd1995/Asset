@@ -92,3 +92,14 @@ class EmployeeApiTest(TestCase):
     self.assertEqual(res.status_code, status.HTTP_200_OK)
     self.assertEqual(employee.name , payload['name'])
     self.assertEqual(employee.department , sample_employee().department)
+  
+  
+  def test_delete_employee(self):
+    """ Test deleting a employee  """
+    asset = sample_employee()
+    
+    url = detail_url(asset.id)
+    res = self.client.delete(url)
+    
+    self.assertEqual(res.status_code, status.HTTP_204_NO_CONTENT)
+    self.assertEqual(EmployeeModel.objects.count(), 0)
