@@ -41,7 +41,6 @@ class assetApiTest(TestCase):
   
   def test_create_assets_successfuly(self):
     """ test that assets is created successfully"""
-    asset = sample_asset()
     payload = {
       'name': "test name",
       'manufacturer' : "test manu",
